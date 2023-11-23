@@ -21,7 +21,7 @@ class LeaveRequestFactory extends Factory
     {
 
         $format = 'Y-m-d';
-        $start_date = \DateTimeImmutable::createFromMutable( fake()->dateTimeBetween('-30 years', '+1 year') );
+        $start_date = \DateTimeImmutable::createFromMutable( fake()->dateTimeBetween('-30 years', '-1 day') );
         $modifier = fake()->numberBetween(1, 28);
         $end_date = $start_date->modify( sprintf("+%d %s", $modifier, $modifier == 1 ? 'day' : 'days') );
         
